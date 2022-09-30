@@ -1,11 +1,14 @@
 #Read libraries
+
 library(tidyverse)
 library(readr)
 
 #Import Dataset
+
 state_education <- readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/epsy-8251/main/data/state-education.csv")
 
 #Convert character as factor and create salary_thousand
+
 data <- state_education %>% 
   mutate_if(is.character, as.factor) %>% 
   mutate(salary_thousand = salary_2020_21/1000)
